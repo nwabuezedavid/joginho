@@ -95,7 +95,7 @@ from urllib.parse import urlparse
  
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = urlparse(DATABASE_URL='postgresql://neondb_owner:rh52ZWtFUyva@ep-fancy-sky-a5vr0buz.us-east-2.aws.neon.tech/neondb?sslmode=require')
+tmpPostgres = urlparse('postgresql://neondb_owner:rh52ZWtFUyva@ep-fancy-sky-a5vr0buz.us-east-2.aws.neon.tech/neondb?sslmode=require')
 
 DATABASES = {
     'default': {
