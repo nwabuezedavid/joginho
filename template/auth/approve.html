@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 150px;
+        }
+
+        .header h1 {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin: 0 0 15px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+{% if user.appoved == True %}
+    <div class="container">
+        <div class="header">
+            <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="Your Logo">
+            <h1>Verification Successful</h1>
+        </div>
+        <div class="content">
+            <p>Congratulations, {{user.user.username}}!</p>
+            <p>Your account has been successfully verified. You can now log in and access all the features of your account.</p>
+            <a href="/account/login" class="button">Log In</a>
+        </div>
+        <div class="footer">
+            <p>If you have any questions, feel free to <a href="mailto:{{site.email}}">contact our support team</a>.</p>
+        </div>
+    </div>
+    {% else %}
+
+
+
+    <div class="container">
+        <div class="header">
+            <img src="https://t3.ftcdn.net/jpg/02/88/11/60/240_F_288116016_RipFzPkpQa6lcGid6yoFdjnxG9qtr5s8.jpg" alt="Your Logo">
+            <h1>Verification Code Expired</h1>
+        </div>
+        <div class="content">
+            <p>Hi User,</p>
+            <p>Unfortunately, the verification code you received has expired. Please request a new code to proceed with the verification process.</p>
+            <a href="/" class="button">Home</a>
+        </div>
+        <div class="footer">
+            <p>If you have any questions, feel free to <a href="mailto:{{site.email}}">contact our support team</a>.</p>
+        </div>
+    </div>
+{% endif %}
+</body>
+
+</html>

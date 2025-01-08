@@ -1,0 +1,48 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %}
+
+<div class="content-w">
+    <!--------------------
+        START - Breadcrumbs
+        -------------------->
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'dashboard' user.uuid %}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#">Account</a>
+      </li>
+      <li class="breadcrumb-item">
+        <span>Beneficiaries</span>
+      </li>
+    </ul>
+    <!--------------------
+  END - Breadcrumbs
+  -------------------->
+    <div class="content-i">
+          <div class="content-box">
+              <div class="element-wrapper">
+                  <h6 class="element-header">
+                      Beneficiaries
+                  </h6>
+                  <div class="element-box">
+                      <h5 class="form-header">
+                          My Beneficiaries
+                      </h5>
+                      <div class="table-responsive">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 text-center" id="answer" style="margin-top: 10px;"></div>
+                                                          
+                              <div class="box-body">
+                                  <h4 class="text-center" style="margin-top:20px">No Beneficiary Added Yet</h4>
+                              </div>
+                          
+                                                              
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> 
+{% endblock conrent %} 

@@ -1,0 +1,58 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %} 
+
+-------------------->
+<div class="content-w">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="https://www.premiumhillscapital.com/member_dashboard/index.php">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="https://www.premiumhillscapital.com/member_dashboard/deposit.php#">Deposit</a>
+            </li>
+            <li class="breadcrumb-item">
+              <span>Deposit fund</span>
+            </li>
+          </ul> 
+          <div class="content-i">
+            <div class="content-box">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="element-wrapper">
+                    <h6 class="element-header">Deposit</h6>
+                    <div class="element-box">
+                      <form method="post" >
+                        {% csrf_token %}
+                        <h5 class="form-header">Deposit form</h5>
+                        <div class="form-desc"></div>
+                        <div class="form-group m-t-30"></div>
+                        <div class="col-xs-12 col-sm-12 col-lg-12 text-center" id="answer" style="margin-top: 10px; background-color: white; color: green;"></div>
+                        <div class="form-group">
+                          <label for="">Deposit Amount</label>
+                          <input class="form-control" placeholder="Amount" type="text" id="amount" name="amount" required="">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="">Prefer Deposit Method</label>
+                          <select name="method" id="method" class="form-control" required="">
+                            <option value="Wire transfer">Wire Transfer</option>
+                            <option value="Paypal">Paypal</option>
+                            <option value="Moneygram">Moneygram</option>
+                            <option value="Others">Others</option>
+                          </select>
+                        </div>
+                        <div class="form-buttons-w">
+                          <button class="btn btn-primary" type="submit">
+                            Continue
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock conrent %} 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="max-w-xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-12">
+        <!-- Icon and Success Message -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                </svg>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Transaction Successful</h1>
+            <p class="mt-2 text-sm text-gray-600">You have successfully transferred 3,000 USD to BBVA</p>
+            <p class="mt-1 font-semibold text-sm text-gray-700">Details of your transaction are shown below</p>
+        </div>
+
+        <!-- Transaction Details Table -->
+        <div class="space-y-6">
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Amount Debited</span>
+                <span class="text-gray-900 font-medium">USD -3,000</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Transaction Reference</span>
+                <span class="text-gray-900 font-medium">REF/9D948B8D20</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Account Holder</span>
+                <span class="text-gray-900 font-medium">BLESSING</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Account Number</span>
+                <span class="text-gray-900 font-medium">1523372229</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Bank Name</span>
+                <span class="text-gray-900 font-medium">BBVA</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Date/Time</span>
+                <span class="text-gray-900 font-medium">SEPT. 11, 2024, 10:24 A.M.</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                <span class="font-semibold text-gray-500 uppercase text-xs tracking-wide">Description</span>
+                <span class="text-gray-900 font-medium">TRANSFER</span>
+            </div>
+        </div>
+        <button onclick="window.print();" class="no-print bg-blue-500 text-white py-2 px-4 rounded mt-4 hover:bg-blue-600 focus:outline-none">
+            Print Receipt
+        </button>
+    </div>
+</body>
+</html>

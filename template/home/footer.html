@@ -1,0 +1,95 @@
+
+
+{% load static %}
+
+
+<!-- footer area start -->
+<footer class="tp-footer-area pt-80 p-relative z-index-1" data-bg-color="#07457e" style="background-color: rgb(7, 69, 126);">
+    <div class="tp-footer-bg-shape">
+       <!-- <img src="{{site.logo}}" alt="{{site.name}}"> -->
+    </div>
+    <div class="tp-footer-main-area tp-footer-border">
+       <div class="container">
+          <div class="row">
+             <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="tp-footer-widget tp-footer-col-1 mb-50">
+                   <div class="tp-footer-logo mb-20">
+                   <a href="/"> <img src="{{site.logo}}" alt="{{site.name}}" width="100"></a>
+                   </div>
+                   <div class="tp-footer-widget-content">
+                      <p>
+                        Join our community of individuals and businesses committed to building a strong financial legacy. 
+                        Your future begins here, and we are honored to be part of your financial journey.
+                      </p>
+                      
+                   </div>
+                </div>
+             </div>
+             <div class="col-xl-2 col-lg-4 col-md-6">
+                <div class="tp-footer-widget tp-footer-col-2 mb-50">
+                   <h3 class="tp-footer-widget-title">Personal </h3>
+                   <div class="tp-footer-widget-content">
+                      <ul>
+                        <li><a href="{% url 'savingacc' %}">Savings</a></li>
+                        <li><a href="{% url 'baccount' %}">Checking</a></li>
+                        <li><a href="{% url 'investment' %}">Investment</a></li>
+                        <li><a href="{% url 'creditcard' %}">Cards</a></li>
+                      </ul>
+                   </div>
+                </div> 
+             </div>
+
+             <div class="col-xl-2 col-lg-4 col-md-6" style="margin-right: 50px">
+                <div class="tp-footer-widget tp-footer-col-2 mb-50">
+                   <h3 class="tp-footer-widget-title">Business </h3>
+                   <div class="tp-footer-widget-content">
+                      <ul>
+                        <li><a href="{% url 'savingacc' %}">Savings</a></li>
+                        <li><a href="{% url 'bchecking' %}">Checking</a></li>
+                        <li><a href="{% url 'blending' %}">Lending</a></li>
+                        <li><a href="{% url 'bcreditcard' %}">Credit Card</a></li>
+                      </ul>
+                   </div>
+                </div> 
+             </div>
+             
+             <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="tp-footer-widget tp-footer-col-4 mb-50">
+                   <h3 class="tp-footer-widget-title">Contact us</h3>
+                   <div class="tp-footer-widget-conten">
+                      <div class="tp-footer-widget-contat">
+                         <!--<div class="tp-footer-widget-contact-inner">-->
+                         <!--   <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i>130 Avenue Rd, Toronto, ON M5R 2H6, Canada</a>-->
+                         <!--</div>-->
+                         <!--<div class="tp-footer-widget-contact-inner">-->
+                         <!--   <a href="tel:"><i class="fa-solid fa-phone"></i>+12262121500 </a>-->
+                         <!--</div>-->
+                         <div class="tp-footer-widget-contact-inner">
+                            <a href="mailto:{{site.email}}"><i class="bi bi-envelope"></i> <span class="__cf_email__">{{site.email}}</span></a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="tp-footer-copyright-area p-relative">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12 col-lg-6">
+                <div class="tp-footer-copyright-inner">
+                   <p>© {{site.name}}  <script type="text/javascript" charset="utf-8" async="" src="{% static 'Home _ Premium Hills Capital_files/loader.js'%}.download"></script><script type="text/JavaScript">document.write(new Date().getFullYear());</script> | All Rights Reserved</p>
+                </div>
+             </div>
+             <div class="col-md-12 col-lg-6">
+                <div class="tp-footer-copyright-inner text-lg-end">
+                   <a href="{% url 'policy' %}">Privacy Policy</a>
+                   <a href="{% url 'carrer' %}">Careers</a>
+                   
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</footer>

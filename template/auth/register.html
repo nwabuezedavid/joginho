@@ -1,0 +1,560 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+
+{% block conrent %} 
+
+
+
+<div class="all-wrapper menu-side with-pattern pt-5">
+  <div class="auth-box-w">
+    <div class="logo-w">
+      <a href="/"
+        ><img
+          alt="{{site.name}}"
+          src="{{site.logo}}"
+          width="150"
+          height=""
+      /></a>
+    </div>
+    <h4 class="auth-header">Signup</h4>
+    <div class="woocommerce-notices-wrapper"></div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Firstname<span class="required">*</span></label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          name="firstname"
+          id="firstname"
+          autocomplete="firstname"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastname">Lastname<span class="required">*</span></label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          name="lastname"
+          id="lastname"
+          autocomplete="lastname"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Country<span class="required">*</span></label>
+        <select class="form-control" name="country">
+          <option>Select Country</option>
+          <option>Afghanistan</option>
+          <option>Aland Islands (Finland)</option>
+          <option>Albania</option>
+          <option>Algeria</option>
+          <option>American Samoa (USA)</option>
+          <option>Andorra</option>
+          <option>Angola</option>
+          <option>Anguilla (UK)</option>
+          <option>Antigua and Barbuda</option>
+          <option>Argentina</option>
+          <option>Armenia</option>
+          <option>Aruba (Netherlands)</option>
+          <option>Australia</option>
+          <option>Austria</option>
+          <option>Azerbaijan</option>
+          <option>Bahamas</option>
+          <option>Bahrain</option>
+          <option>Bangladesh</option>
+          <option>Barbados</option>
+          <option>Belarus</option>
+          <option>Belgium</option>
+          <option>Belize</option>
+          <option>Benin</option>
+          <option>Bermuda (UK)</option>
+          <option>Bhutan</option>
+          <option>Bolivia</option>
+          <option>Bosnia and Herzegovina</option>
+          <option>Botswana</option>
+          <option>Brazil</option>
+          <option>British Virgin Islands (UK)</option>
+          <option>Brunei</option>
+          <option>Bulgaria</option>
+          <option>Burkina Faso</option>
+          <option>Burma</option>
+          <option>Burundi</option>
+          <option>Cambodia</option>
+          <option>Cameroon</option>
+          <option>Canada</option>
+          <option>Cape Verde</option>
+          <option>Caribbean Netherlands (Netherlands)</option>
+          <option>Cayman Islands (UK)</option>
+          <option>Central African Republic</option>
+          <option>Chad</option>
+          <option>Chile</option>
+          <option>China</option>
+          <option>Christmas Island (Australia)</option>
+          <option>Cocos (Keeling) Islands (Australia)</option>
+          <option>Colombia</option>
+          <option>Comoros</option>
+          <option>Cook Islands (NZ)</option>
+          <option>Costa Rica</option>
+          <option>Croatia</option>
+          <option>Cuba</option>
+          <option>Curacao (Netherlands)</option>
+          <option>Cyprus</option>
+          <option>Czech Republic</option>
+          <option>Democratic Republic of the Congo</option>
+          <option>Denmark</option>
+          <option>Djibouti</option>
+          <option>Dominica</option>
+          <option>Dominican Republic</option>
+          <option>Ecuador</option>
+          <option>Egypt</option>
+          <option>El Salvador</option>
+          <option>Equatorial Guinea</option>
+          <option>Eritrea</option>
+          <option>Estonia</option>
+          <option>Ethiopia</option>
+          <option>Falkland Islands (UK)</option>
+          <option>Faroe Islands (Denmark)</option>
+          <option>Federated States of Micronesia</option>
+          <option>Fiji</option>
+          <option>Finland</option>
+          <option>France</option>
+          <option>French Guiana (France)</option>
+          <option>French Polynesia (France)</option>
+          <option>Gabon</option>
+          <option>Gambia</option>
+          <option>Georgia</option>
+          <option>Germany</option>
+          <option>Ghana</option>
+          <option>Gibraltar (UK)</option>
+          <option>Greece</option>
+          <option>Greenland (Denmark)</option>
+          <option>Grenada</option>
+          <option>Guadeloupe (France)</option>
+          <option>Guam (USA)</option>
+          <option>Guatemala</option>
+          <option>Guernsey (UK)</option>
+          <option>Guinea</option>
+          <option>Guinea-Bissau</option>
+          <option>Guyana</option>
+          <option>Haiti</option>
+          <option>Honduras</option>
+          <option>Hong Kong (China)</option>
+          <option>Hungary</option>
+          <option>Iceland</option>
+          <option>India</option>
+          <option>Indonesia</option>
+          <option>Iran</option>
+          <option>Iraq</option>
+          <option>Ireland</option>
+          <option>Isle of Man (UK)</option>
+          <option>Israel</option>
+          <option>Italy</option>
+          <option>Ivory Coast</option>
+          <option>Jamaica</option>
+          <option>Japan</option>
+          <option>Jersey (UK)</option>
+          <option>Jordan</option>
+          <option>Kazakhstan</option>
+          <option>Kenya</option>
+          <option>Kiribati</option>
+          <option>Kosovo</option>
+          <option>Kuwait</option>
+          <option>Kyrgyzstan</option>
+          <option>Laos</option>
+          <option>Latvia</option>
+          <option>Lebanon</option>
+          <option>Lesotho</option>
+          <option>Liberia</option>
+          <option>Libya</option>
+          <option>Liechtenstein</option>
+          <option>Lithuania</option>
+          <option>Luxembourg</option>
+          <option>Macau (China)</option>
+          <option>Macedonia</option>
+          <option>Madagascar</option>
+          <option>Malawi</option>
+          <option>Malaysia</option>
+          <option>Maldives</option>
+          <option>Mali</option>
+          <option>Malta</option>
+          <option>Marshall Islands</option>
+          <option>Martinique (France)</option>
+          <option>Mauritania</option>
+          <option>Mauritius</option>
+          <option>Mayotte (France)</option>
+          <option>Mexico</option>
+          <option>Moldov</option>
+          <option>Monaco</option>
+          <option>Mongolia</option>
+          <option>Montenegro</option>
+          <option>Montserrat (UK)</option>
+          <option>Morocco</option>
+          <option>Mozambique</option>
+          <option>Namibia</option>
+          <option>Nauru</option>
+          <option>Nepal</option>
+          <option>Netherlands</option>
+          <option>New Caledonia (France)</option>
+          <option>New Zealand</option>
+          <option>Nicaragua</option>
+          <option>Niger</option>
+          <option>Nigeria</option>
+          <option>Niue (NZ)</option>
+          <option>Norfolk Island (Australia)</option>
+          <option>North Korea</option>
+          <option>Northern Mariana Islands (USA)</option>
+          <option>Norway</option>
+          <option>Oman</option>
+          <option>Pakistan</option>
+          <option>Palau</option>
+          <option>Palestine</option>
+          <option>Panama</option>
+          <option>Papua New Guinea</option>
+          <option>Paraguay</option>
+          <option>Peru</option>
+          <option>Philippines</option>
+          <option>Pitcairn Islands (UK)</option>
+          <option>Poland</option>
+          <option>Portugal</option>
+          <option>Puerto Rico</option>
+          <option>Qatar</option>
+          <option>Republic of the Congo</option>
+          <option>Reunion (France)</option>
+          <option>Romania</option>
+          <option>Russia</option>
+          <option>Rwanda</option>
+          <option>Saint Barthelemy (France)</option>
+          <option>Saint Helena, Ascension and Tristan da Cunha (UK)</option>
+          <option>Saint Kitts and Nevis</option>
+          <option>Saint Lucia</option>
+          <option>Saint Martin (France)</option>
+          <option>Saint Pierre and Miquelon (France)</option>
+          <option>Saint Vincent and the Grenadines</option>
+          <option>Samoa</option>
+          <option>San Marino</option>
+          <option>Sao Tom and Principe</option>
+          <option>Saudi Arabia</option>
+          <option>Senegal</option>
+          <option>Serbia</option>
+          <option>Seychelles</option>
+          <option>Sierra Leone</option>
+          <option>Singapore</option>
+          <option>Sint Maarten (Netherlands)</option>
+          <option>Slovakia</option>
+          <option>Slovenia</option>
+          <option>Solomon Islands</option>
+          <option>Somalia</option>
+          <option>South Africa</option>
+          <option>South Korea</option>
+          <option>South Sudan</option>
+          <option>Spain</option>
+          <option>Sri Lanka</option>
+          <option>Sudan</option>
+          <option>Suriname</option>
+          <option>Svalbard and Jan Mayen (Norway)</option>
+          <option>Swaziland</option>
+          <option>Sweden</option>
+          <option>Switzerland</option>
+          <option>Syria</option>
+          <option>Taiwan</option>
+          <option>Tajikistan</option>
+          <option>Tanzania</option>
+          <option>Thailand</option>
+          <option>Timor-Leste</option>
+          <option>Togo</option>
+          <option>Tokelau (NZ)</option>
+          <option>Tonga</option>
+          <option>Trinidad and Tobago</option>
+          <option>Tunisia</option>
+          <option>Turkey</option>
+          <option>Turkmenistan</option>
+          <option>Turks and Caicos Islands (UK)</option>
+          <option>Tuvalu</option>
+          <option>Uganda</option>
+          <option>Ukraine</option>
+          <option>United Arab Emirates</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>United States Virgin Islands (USA)</option>
+          <option>Uruguay</option>
+          <option>Uzbekistan</option>
+          <option>Vanuatu</option>
+          <option>Vatican City</option>
+          <option>Venezuela</option>
+          <option>Vietnam</option>
+          <option>Wallis and Futuna (Franvce)</option>
+          <option>Western Sahara</option>
+          <option>Yemen</option>
+          <option>Zambia</option>
+          <option>Zimbabwe</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="occupation"
+          >Occupation&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="occupation"
+          id="occupation"
+          autocomplete="occupation"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email&nbsp;<span class="required">*</span></label>
+        <input
+          required
+          class="form-control"
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="email"
+        />
+        <div class="row" style="position: absolute">
+          <div
+            hidden="hidden"
+            style="color: red; background-color: white; z-index: 1000"
+            class="col-md-12 col-sm-12 col-lg-6"
+            id="email_error"
+          ></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address"
+          >Address&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="address"
+          id="address"
+          autocomplete="address"
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">City&nbsp;<span class="required">*</span></label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="city"
+          id="city"
+          autocomplete="city"
+        />
+      </div>
+      <div class="form-group">
+        <label for="state">State&nbsp;<span class="required">*</span></label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="state"
+          id="state"
+          autocomplete="state"
+        />
+      </div>
+      <div class="form-group">
+        <label for="zipcode"
+          >Zipcode&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="zipcode"
+          id="zipcode"
+          autocomplete="zipcode"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone&nbsp;<span class="required">*</span></label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="phone"
+          id="phone"
+          autocomplete="phone"
+        />
+      </div>
+      <div class="form-group">
+        <label for="dob"
+          >Date of Birth&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="dob"
+          id="dob"
+          placeholder = "dd-mm-yy"
+          autocomplete="dob"
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Gender<span class="required">*</span></label>
+        <select class="form-control" name="gender">
+          <option>Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="username"
+          >Username&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="text"
+          id="username"
+          name="username"
+          autocomplete="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password"
+          >Password&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          type="password"
+          onkeyup="checkPLenght()"
+          name="password"
+          id="password"
+          autocomplete="current-password"
+        />
+        <div class="row" style="position: absolute">
+          <div
+            hidden="hidden"
+            style="color: red; background-color: white; z-index: 1000"
+            class="col-xs-12 col-sm-12 col-lg-6"
+            id="pass_error"
+          ></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password2"
+          >Re-Password&nbsp;<span class="required">*</span></label
+        >
+        <input
+          required
+          class="form-control"
+          onkeyup="checkPassword()"
+          type="password"
+          name="password2"
+          id="password2"
+          autocomplete="password"
+        />
+        <div class="row" style="position: absolute">
+          <div
+            hidden="hidden"
+            style="color: red; background-color: white; z-index: 1000"
+            class="col-md-12 col-sm-12 col-lg-6"
+            id="con_pass_error"
+          ></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Status<span class="required">*</span></label>
+        <select class="form-control" name="status">
+          <option>Marital Status</option>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="account_type"
+          >Account Type<span class="required">*</span></label
+        >
+        <select class="form-control" name="account_type">
+          <option>Account Type</option>
+          <option>Savings</option>
+          <option>Current</option>
+          <option>Offshore</option>
+          <option>Joint</option>
+          <option>Fixed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="prefered_cur"
+          >Preferred Currency<span class="required">*</span></label
+        >
+        <select class="form-control" required name="prefered_cur">
+          <option value="Prefered Currency">Prefered Currency</option>
+          <option value="USD">USD</option>
+          <option value="GBP">British pound (GBP)</option>
+          <option value="EUR">EURO (EUR)</option>
+          <option value="AUD">Australian Dollar (AUD)</option>
+          <option value="CAD">Canadian Dollars (CAD)</option>
+          <option value="fr">Swiss Franc (fr)</option>
+          <option value="JPY">Japanese Yen (JPY)</option>
+          <option value="NZD">New Zealand Dollars (NZD)</option>
+          <option value="Yuan">Chinese Yuan (Yuan)</option>
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; flex-direction: column">
+        <label for="usernames"
+          >Upload Photo&nbsp;<span class="required">*</span>
+        <input required class="form-control" hidden type="text" id="picName" name="picName" /> 
+        <a class="btn btn-primary text-white" style="margin-top: 10px"
+          >Browse</a
+        >
+        <img src="" style="width: 50% ; height: 120px; " id="imgx" alt="{{site.name}}">
+        <input
+          required
+          type="file"
+          id="usernames"
+          placeholder="Export Certificate"
+          class="santy form-control"
+          style="visibility: hidden"
+          onchange="imagechange('#usernames', '#picName','#imgx') "
+        />
+        </label
+        >
+      </div>
+      <script>
+        function imagechange(eme, imput,imgxx) {
+const filex  = document.querySelector(eme)
+const imputx  = document.querySelector(imput)
+const imgx  = document.querySelector(imgxx)
+    const f = new FileReader()
+console.log('loading',);
+
+f.readAsDataURL(filex.files[0]);
+f.addEventListener('load',()=>{
+    const bytx = f.result
+    imputx.value = bytx
+    imgx.src = bytx
+    console.log('loading',bytx);
+
+
+
+})
+}
+    </script>
+      <div class="buttons-w">
+        <button type="submit" class="btn btn-primary" name="account_setup">
+          Register
+        </button>
+        <div class="form-check-inline">
+          <a href="{% url 'Loginuser' %}"
+            >Login Here?</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock conrent %}

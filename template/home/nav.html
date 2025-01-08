@@ -1,0 +1,266 @@
+{% load static %}
+
+
+
+<div id="loading" style="display: none;">
+    <div id="loading-center">
+       <div class="preloader"></div>
+    </div>  
+ </div>
+ 
+ <div class="back-to-top-wrapper back-to-top-btn-show">
+    <button id="back_to_top" type="button" class="back-to-top-btn">
+       <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+       </svg>               
+    </button>
+ </div>
+ 
+ <div class="search-area">
+    <div class="search-inner p-relative">
+       <div class="container">
+          <div class="row justify-content-center">
+             <div class="col-lg-8">
+                <div class="search-wrapper">
+                   <div class="search-close">
+                      <button class="search-close-btn">
+                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                         </svg>
+                      </button>
+                   </div>
+                   <div class="search-content pt-35">
+                      <h3 class="heading text-center mb-30">Hi! How can we help You?</h3>
+                      <div class="d-flex justify-content-center px-5">
+                         <div class="search w-100 p-relative">
+                            <input type="text" class="search-input" placeholder="Search...">
+                            <button class="search-icon">
+                            <i class="bi bi-search"></i>
+                            </button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="search-overlay"></div>
+ <!-- search area end -->
+
+
+ <!-- offcanvas area start -->
+ <div class="offcanvas__area">
+    <div class="offcanvas__wrapper">
+       <div class="offcanvas__close">
+          <button class="offcanvas__close-btn offcanvas-close-btn">
+             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+             </svg>
+          </button>
+       </div>
+       <div class="offcanvas__content">
+          <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
+             <div class="offcanvas__logo logo">
+                <a href="/">
+                   <img src="{{site.logo}}" alt="{{site.name}}" width="100%">
+                </a>
+             </div>
+          </div>
+
+             <div class="tp-main-menu-mobile fix d-xl-none mb-40"><nav class="tp-main-menu-content">
+                   <ul>
+                     <li><a href="/"><span>Home</span></a></li>
+
+                     <li class="has-dropdown"><a href="#"><span>Personal Bankings</span>
+                        <button class="dropdown-toggle-btn"><i class="bi  bi-chevron-compact-down"></i></button></a>
+                        <ul class="submenu">
+                           <li><a href="{% url 'savingacc' %}"><span>Savings</span></a></li>
+                           <li><a href="{% url 'investment' %}"><span>Investments</span></a></li>
+                           <li><a href="{% url 'creditcard' %}"><span>Cards</span></a></li>
+                        </ul>
+                     </li>
+                     <li class="has-dropdown">
+                        <a href="#"><span>Business Banking</span><button class="dropdown-toggle-btn">
+                           <i class="bi bi-chevron-compact-down"></i></button></a>
+                        <ul class="submenu">
+                             <li><a href="{% url 'savingacc' %}"><span>Savings</span></a></li>
+                             <li><a href="{% url 'bchecking' %}"><span>Checking</span></a></li>
+                             <li><a href="{% url 'blending' %}"><span>Lending</span></a></li>
+                             <li><a href="{% url 'bcreditcard' %}"><span>Credit Card</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a href="{% url 'contact' %}"><span>Contact us</span></a></li>
+                     
+                   </ul>
+                </nav></div>
+          
+          
+          
+       </div>
+    </div>
+ </div>
+ <div class="body-overlay"></div>
+ <!-- offcanvas area end -->
+
+
+ <!-- header area start -->
+ <header class="tp-header-area p-relative">
+    <div class="tp-header-box p-relative">
+       <div class="tp-header-logo p-relative">
+          <span class="tp-header-logo-bg"></span>
+          <a href="/">
+             <img src="{{site.logo}}" alt="{{site.name}}" class="" width="60%">
+          </a>
+       </div>
+       <div class="tp-header-wrapper-inner header__sticky p-relative">
+          <div class="tp-header-top d-none d-xl-flex">
+             <div class="tp-header-top-info">
+                <a href="/" target="_blank"></a>
+                <span>Solutions to help you along your financial journey.</span>
+             </div>
+             <div class="tp-header-top-right d-flex justify-content-end align-items-center">
+                <div class="header-social ">
+                   <a href="{% url 'carrer' %}">Careers</a>
+                   <a href="{% url 'carrer' %}">Support</a>
+                </div>
+             </div>
+          </div>
+          <div class="tp-header-main-menu d-flex align-items-center justify-content-between">
+             <div class="tp-main-menu d-none d-xl-block">
+                <nav class="tp-main-menu-content">
+                   <ul>
+                     <li><a href="/"><span>Home</span></a></li>
+
+                     <li class="has-dropdown"><a href="#"><span>Personal Banking</span> <i class="bi bi-chevron-compact-down"></i></a>
+                        <ul class="submenu">
+                           <li><a href="{% url 'savingacc' %}"><span>Savings</span></a></li>
+                           <li><a href="{% url 'bchecking' %}"><span>Checking</span></a></li>
+                           <li><a href="{% url 'investment' %}"><span>Investments</span></a></li>
+                           <li><a href="{% url 'creditcard' %}"><span>Cards</span></a></li>
+                        </ul>
+                     </li>
+                     <li class="has-dropdown">
+                        <a href="#"><span>Business Banking</span></a>
+                        <ul class="submenu">
+                             <li><a href="{% url 'bchecking' %}"><span>Savings</span></a></li>
+                             <li><a href="{% url 'baccount' %}"><span>Checking</span></a></li>
+                             <li><a href="{% url 'blending' %}"><span>Lending</span></a></li>
+                             <li><a href="{% url 'bcreditcard' %}"><span>Credit Card</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a href="{% url 'contact' %}"><span>Contact us</span></a></li>
+                     
+                   </ul>
+                </nav>
+             </div>
+             <div class="tp-header-main-right d-flex align-items-center justify-content-xl-end">
+                <div class="tp-header-contact d-xl-flex align-items-center d-none">
+                   
+                   <div class="tp-header-contact-inner d-flex align-items-center">
+                      <div class="tp-header-contact-icon">
+                        <a href="mailto:{{site.email}}">
+                           <span><i class="bi bi-envelope"></i></span>
+                        </a>
+                      </div>
+                      
+                   </div>
+                </div>
+                <div class="tp-header-sticky-hamburger d-xl-none offcanvas-open-btn">
+                   <button class="hamburger-btn">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                   </button>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="tp-header-btn">
+          <a class="tp-btn d-none d-xl-block" href="/register">Internet Banking</a>
+          <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
+             <button class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+             </button>
+          </div>
+       </div>
+    </div>
+ </header>
+ <!-- header area end -->
+
+ <!-- sticky header start -->
+ <header id="header-sticky" class="tp-header-main-sticky p-relative tp-header-sticky">
+    <div class="tp-header-space-2">
+       <div class="container-fluid">
+          <div class="row align-items-center">
+             <div class="col-xl-3 col-6">
+                <div class="tp-header-logo-2 p-relative">
+                   <a href="/">
+                      <img src="{{site.logo}}" alt="{{site.name}}" width="60%">
+                   </a>
+                </div>
+             </div>
+             <div class="col-lg-6 d-none d-xl-block">
+                <div class="tp-main-menu home-2 d-none d-xl-block">
+                   <nav class="tp-main-menu-content">
+                      <ul>
+                         <li><a href="/"><span>Home</span></a></li>
+
+                         <li class="has-dropdown"><a href="#"><span>Personal Banking</span><i class="bi bi-chevron-compact-down"></i></a>
+                            <ul class="submenu">
+                               <li><a href="{% url 'savingacc' %}"><span>Savings</span></a></li>
+                               <li><a href="{% url 'baccount' %}"><span>Checking</span></a></li>
+                               <li><a href="{% url 'investment' %}"><span>Investment</span></a></li>
+                               <li><a href="{% url 'creditcard' %}"><span>Cards</span></a></li>
+                            </ul>
+                         </li>
+                         <li class="has-dropdown">
+                            <a href="#"><span>Business Banking</span></a>
+                            <ul class="submenu">
+                                 <li><a href="{% url 'savingacc' %}"><span>Savings</span></a></li>
+                                 <li><a href="{% url 'bchecking' %}"><span>Checking</span></a></li>
+                                 <li><a href="{% url 'blending' %}"><span>Lending</span></a></li>
+                                 <li><a href="{% url 'bcreditcard' %}"><span>Credit Card</span></a></li>
+                            </ul>
+                         </li>
+                         <li><a href="{% url 'contact' %}"><span>Contact us</span></a></li>
+                         
+                         
+                      </ul>
+                   </nav>
+                </div>
+             </div>
+             <div class="col-xl-3 col-6">
+                <div class="tp-header-main-right-2 d-flex align-items-center justify-content-xl-end">
+                   <div class="tp-header-contact-2 d-flex align-items-center">
+                      
+                      <div class="tp-header-contact-inner d-none d-xl-flex align-items-center">
+                         <div class="tp-header-contact-icon">
+                           <a href="mailto:{{site.email}}">
+                              <span><i class="bi bi-envelope"></i></span>
+                           </a>
+                            
+                         </div>
+                         
+                      </div>
+                      <a class="tp-btn d-none d-xl-block" href="/register">Internet Banking</a>
+                   </div>
+                   <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn text-end">
+                      <button class="hamburger-btn">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                      </button>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </header>
+ <!-- sticky header end -->

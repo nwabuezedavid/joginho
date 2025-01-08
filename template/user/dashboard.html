@@ -1,0 +1,234 @@
+
+
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %} 
+
+<div class="content-w">
+  <div class="content-i">
+    <div class="content-box">
+      <div class="element-wrapper compact pt-4">
+        <div class="element-actions">
+          <a class="btn btn-primary btn-sm" href="{% url 'deposit' user.uuid %}"><i class="os-icon os-icon-ui-22"></i><span>fund account</span></a>
+          <a class="btn btn-success btn-sm" href="{% url 'loacltranfer' user.uuid %}"><i class="os-icon os-icon-grid-10"></i><span>Make Transfer</span></a>
+        </div>
+        <h6 class="element-header">Financial Overview</h6>
+        <div class="element-box-tp">
+            <div class="owl-carousel owl-loaded owl-drag">
+                
+          <!--      <div class="row  pr-lg-5 pr-0">-->
+          <!--  <div class="col-lg-7 col-xxl-6">-->
+          <!--    <div class="element-balances">-->
+          <!--      <div class="balance hidden-mobile">-->
+          <!--        <div class="balance-title">Total Balance</div>-->
+          <!--        <div class="balance-value">-->
+          <!--          <span>₤ 0.00</span-->
+          <!--          >-->
+          <!--        </div>-->
+          <!--        <div class="balance-link">-->
+          <!--          <a-->
+          <!--            class="btn btn-link btn-underlined"-->
+          <!--            href="recent.php"-->
+          <!--            ><span>View Statement</span-->
+          <!--            ><i class="os-icon os-icon-arrow-right4"></i-->
+          <!--          ></a>-->
+          <!--        </div>-->
+          <!--      </div>-->
+          <!--      <div class="balance">-->
+          <!--        <div class="balance-title">Available Balance</div>-->
+          <!--        <div class="balance-value">₤ 0.00</div>-->
+          <!--        <div class="balance-link">-->
+          <!--          <a-->
+          <!--            class="btn btn-link btn-underlined"-->
+          <!--            href="transfer.php"-->
+          <!--            ><span>Transfer Fund</span-->
+          <!--            ><i class="os-icon os-icon-arrow-right4"></i-->
+          <!--          ></a>-->
+          <!--        </div>-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <!--  </div>-->
+
+          <!--  <div class="col-lg-5 col-md-5">-->
+          <!--    <div class="card">-->
+          <!--      <div class="card-block">-->
+          <!--        <h4 class="card-title">Account Details</h4>-->
+          <!--        <div class="row">-->
+          <!--          <table class="table tabel-condensed table-striped">-->
+          <!--            <tr>-->
+          <!--              <td>Account Name :</td>-->
+          <!--              <td>David Nwabueze</td>-->
+          <!--            </tr>-->
+          <!--            <tr>-->
+          <!--              <td>Balance :</td>-->
+          <!--              <td>₤ 0.00</td>-->
+          <!--            </tr>-->
+          <!--            <tr>-->
+          <!--              <td>Account Type :</td>-->
+          <!--              <td>Savings Account</td>-->
+          <!--            </tr>-->
+          <!--            <tr>-->
+          <!--              <td>Account Number :</td>-->
+          <!--              <td>3555931636</td>-->
+          <!--            </tr>-->
+
+          <!--            <tr>-->
+          <!--              <td>Swift Code :</td>-->
+          <!--              <td>JBBKAZ22XXX</td>-->
+          <!--            </tr>-->
+          <!--          </table>-->
+          <!--        </div>-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <!--  </div>-->
+          <!--</div>-->
+        <div class="owl-stage-outer"><div class="owl-stage" style="transition: all; width: 956px; transform: translate3d(0px, 0px, 0px);">
+          <div class="owl-item active center" style="width: 100vw;"><div class="row pr-lg-5 pr-0">
+                    <div class="col-lg-7 col-xxl-6">
+                      <!--START - BALANCES-->
+                      <div class=" *:w-fit *:p-4 gap-4 flex flex-wrap  " >
+                        <div class="balance gap-4">
+                          <div class="balance-title  text-xl">Total Balance</div>
+                          <div class="balance-value">
+                            <span class="text-2xl font-bold uppercase">{{user.preferred_currency}} {{user.balance}}</span>
+                          </div>
+                          <div class="balance-link">
+                            <a class="btn btn-link btn-underlined" href="{% url 'hsitory' user.uuid %}"><span>View Statement</span><i class="os-icon os-icon-arrow-right4"></i></a>
+                          </div>
+                        </div>
+                        <div class="balance gap-4">
+                          <div class="balance-title text-xl">Available Balance</div>
+                          <div class="balance-value text-2xl font-bold uppercase">{{user.preferred_currency}} {{user.balance}}</div>
+                          <div class="balance-link">
+                            <a class="btn btn-link btn-underlined" href="{% url 'loacltranfer' user.uuid %}"><span>Transfer Fund</span><i class="os-icon os-icon-arrow-right4"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--END - BALANCES-->
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 ">
+                      <div class="card">
+                        <div class="card-block">
+                          <h4 class="card-title">Account Details</h4>
+                          <div class="row p-4">
+                            <table class="table tabel-condensed table-striped">
+                              <tbody><tr>
+                                <td>Account Name :</td>
+                                <td>{{user.username}} </td>
+                              </tr>
+                              <tr>
+                                <td>Balance :</td>
+                                <td>{{user.preferred_currency}} {{user.balance}}  </td>
+                              </tr>
+                              <tr>
+                                <td>Account Type :</td>
+                                <td>{{user.account_type}} Account</td>
+                              </tr>
+                              <tr>
+                                <td>Account Number :</td>
+                                <td>{{user.accountnum}}</td>
+                              </tr>
+
+                              <tr>
+                                <td>Swift Code :</td>
+                                <td>{{user.swiftcode}}</td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button></div></div>
+        </div>
+      </div>
+          <div class="element-wrapper">
+            <h6 class="element-header">Recent Transactions</h6>
+            <div class="element-box-tp">
+              <div class="table-responsive">
+                {% if not user.deposite.all  %}
+                <div class="box-body">
+                    <h4 class="text-center" style="margin-top:20px">No Transactions Yet</h4>
+                    
+                </div>
+            {% else  %}
+                <div class="container mx-auto p-4">
+                  <h2 class="text-2xl font-bold mb-4">Transfer History</h2>
+                
+                  
+                </div>
+                        
+                <div class="overflow-x-auto">
+                  <table class="min-w-full bg-white border border-gray-300 max-sm:text-[60%]">
+                    <thead>
+                      <tr class="bg-gray-100">
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">uuid</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">Recipient</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">Acc -Number</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">Bank Name</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">date</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">Amount</th>
+                        <th class="py-2 px-4 text-left font-semibold text-gray-600">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Sample row 1 -->
+            {% for i in  user.localtransfer.all|slice:":2"   %}
+
+                      <tr class="border-t border-gray-300">
+                        <td class="py-2 px-4 truncate">{{i.uuid}}</td>
+                        <td class="py-2 px-4  truncate">{{i.accname}}</td>
+                        <td class="py-2 px-4 truncate">{{i.accnum}}</td>
+                        <td class="py-2 px-4 truncate">{{i.bankname}}</td>
+                        <td class="py-2 px-4 truncate">{{i.date | timesince }}</td>
+                        <td class="py-2 px-4 truncate">{{user.preferred_currency}}{{i.Amount}}</td>
+                        
+                        <td class="py-2 px-4 max-sm:text-[60%]">
+                          {% if i.appoved == "completed" %}
+                          <span class="text-sm text-green-600 bg-green-100 py-1 px-3 rounded-full">Completed</span>
+                          {% elif i.appoved == "pending" %}
+                          <span class="text-sm text-yellow-600 bg-yellow-100 py-1 px-3 rounded-full">Pending</span>
+                          {% elif i.appoved == "Failed" %}
+                          <span class="text-sm text-red-600 bg-red-100 py-1 px-3 rounded-full">Failed</span>
+                          {% endif %}
+                        </td>
+                      </tr>
+                      {% endfor %}
+            {% for i in  user.intertransfer.all   %}
+
+                      <tr class="border-t border-gray-300">
+                        <td class="py-2 px-4 truncate">{{i.uuid}}</td>
+                        <td class="py-2 px-4  truncate">{{i.accname}}</td>
+                        <td class="py-2 px-4 truncate">{{i.accnum}}</td>
+                        <td class="py-2 px-4 truncate">{{i.bankname}}</td>
+                        <td class="py-2 px-4 truncate">{{i.date | timesince }}</td>
+                        <td class="py-2 px-4 truncate">{{user.preferred_currency}}{{i.Amount}}</td>
+                        
+                        <td class="py-2 px-4 max-sm:text-[60%]">
+                          {% if i.appoved == "completed" %}
+                          <span class="text-sm text-green-600 bg-green-100 py-1 px-3 rounded-full">Completed</span>
+                          {% elif i.appoved == "pending" %}
+                          <span class="text-sm text-yellow-600 bg-yellow-100 py-1 px-3 rounded-full">Pending</span>
+                          {% elif i.appoved == "Failed" %}
+                          <span class="text-sm text-red-600 bg-red-100 py-1 px-3 rounded-full">Failed</span>
+                          {% endif %}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                      <!-- Sample row 2 -->
+                     
+                    </tbody>
+                  </table>
+                </div>
+            {% endif %}
+                
+                                    
+              </div>
+            </div>
+          </div>
+          <!--END - Transactions Table-->
+    </div>
+  </div>
+</div>
+
+{% endblock conrent %} 

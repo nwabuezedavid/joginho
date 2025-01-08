@@ -1,0 +1,53 @@
+{% extends './index.html' %} {% block content %}
+<div
+  id="main-content"
+  class="ahOqFrhzLjivRe8a1kX_ t6gkcSf0Bt4MLItXvDJ_ uLPch_bqyJDXwe5tynMV _lTTGxW9MVI40FyDCtmr jtAJHOc7mn7b4IKRO59D zW58fVqdWJHfumftUEwF h8KYXnua2NT4kTVzieom"
+>
+<div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-8">
+  <h1 class="text-2xl font-bold mb-6 text-gray-800">create transcations</h1>
+  <form action="#" method="POST">
+    {% csrf_token %}
+      <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-medium mb-2">user</label>
+          <select required name="user" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500" >
+            <option value="">Selete User</option>
+            {% for i in userx %}
+            <option value="{{i.uuid}}">{{i.username}}: balance {{i.balance}}</option>
+            {% endfor %}
+            </select>
+      </div>
+      <div class="mb-4">
+          <label for="s" class="block text-gray-700 font-medium mb-2"> Type </label>
+          <select id="s" required name="type" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500" >
+            <option value="">__selete__Type__</option>
+            <option value="credit">credit</option>
+            <option value="debit">debit</option>
+            </select>
+      </div>
+
+         
+
+      
+            <div class="mb-4">
+                <label for="date" class="block text-gray-700 font-medium mb-2">date</label>
+                <input type="datetime-local" required id="date" value="" name="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Enter date">
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Amount</label>
+                <input type="text" required id="phone" value="" name="amount" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Enter Amount">
+            </div>
+      <div class="mb-4">
+          <label for="dis" class="block text-gray-700 font-medium mb-2">Description</label>
+          <textarea id="dis" name="dis" rows="4" value=" " class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Enter description"></textarea>
+      </div>
+
+       
+
+      <button type="submit" style="background-color: brown;" class="w-full !bg-red-600 text-white font-semibold py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50">
+          create
+      </button>
+  </form>
+</div>
+</div>
+
+{% endblock content %}
