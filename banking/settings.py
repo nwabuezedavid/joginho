@@ -84,13 +84,29 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+from urllib.parse import urlparse
+
+ 
+
+# Replace the DATABASES section of your settings.py with this
+tmpPostgres = urlparse(DATABASE_URL='postgresql://neondb_owner:rh52ZWtFUyva@ep-fancy-sky-a5vr0buz.us-east-2.aws.neon.tech/neondb?sslmode=require')
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
