@@ -236,7 +236,7 @@ def registeruser(request):
         account_type = request.POST['account_type']
         prefered_cur = request.POST['prefered_cur']
         picName = request.POST['picName']
-        if User.objects.filter(Q(username= username) | Q(email=email)  ).exists() and firstname.length  < 25:
+        if User.objects.filter(Q(username= username) | Q(email=email)  ).exists() and len(firstname) <= 25:
             messages.error(request, 'username and email already taken')
             return redirect('registeruser') 
         else:
