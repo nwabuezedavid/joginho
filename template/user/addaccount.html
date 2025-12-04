@@ -1,0 +1,83 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %} 
+
+<div class="content-w">
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="https://www.premiumhillscapital.com/member_dashboard/index.php">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="https://www.premiumhillscapital.com/member_dashboard/add_account.php#">Transfer</a>
+    </li>
+    <li class="breadcrumb-item">
+        <span>Local</span>
+    </li>
+    </ul> 
+    <div class="content-i">
+    <div class="content-box">
+        <div class="row">
+        <div class="col-lg-8">
+            <div class="element-wrapper">
+            <h6 class="element-header">New Account</h6>
+            <div class="element-box">
+                <form id="transferForm">
+                <div class="row" id="showerer">
+                    <div class="col-xs-12 col-sm-12 col-lg-12 text-center" id="answer" style="margin-top: 10px;">
+
+
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-12" style="margin-top: 10px;">
+                        <h5 class="form-header">Add New Account</h5>
+                        <div class="form-desc"></div>
+                        <div class="form-group m-t-30"></div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for=""> Firstname</label>
+                        <input class="form-control" placeholder="Firstname" type="text" name="fname" id="fname">
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                        <label for=""> Lastname</label>
+                        <input class="form-control" placeholder="Lastname" type="text" name="lname" id="lname">
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <label for="">Emailr</label>
+                            <input class="form-control" placeholder="Beneficiary Account Number" type="text" name="email_c" id="email_c">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            <label for="">Type of Account</label>
+                            <select id="account_t" name="account_t" class="form-control">
+                                <option value="Select Option">Select Option</option>
+                                <option value="Current">Current</option>
+                                <option value="Savings">Savings</option>
+                                <option value="Offshore">Offshore</option>
+                            </select>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-buttons-w">
+                        <button class="btn btn-primary" type="button" onclick="Loadform_1()">
+                            Next
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock conrent %} 

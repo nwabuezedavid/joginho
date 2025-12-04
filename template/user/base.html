@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+{% load static %}
+<!-- saved from url=(0053)https://www.premiumhillscapital.com/member_dashboard/ -->
+<html style="height: 100%;"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_BDPhLA"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>User Home</title>
+    
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="template language" name="keywords">
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Squ8QkDUjt3enNPSewzk3byceKwyWdblyqqAiWfm" name="_token">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://www.premiumhillscapital.com/public/Frontend/favicon.png'%}" rel="shortcut icon">
+    <link href="https://www.premiumhillscapital.com/member_dashboard/apple-touch-icon.png'%}" rel="apple-touch-icon">
+    <link href="{% static 'mainz/css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mainz/select2.min.css'%}" rel="stylesheet">
+    <link href="{% static 'mainz/dropzone.css'%}" rel="stylesheet">
+    <link href="{% static 'mainz/dataTables.bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'mainz/perfect-scrollbar.min.css'%}" rel="stylesheet">
+    <link href="{% static 'mainz/slick.css'%}" rel="stylesheet">
+    <link href="{% static 'mainz/main.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'mainz/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{% static 'mainz/owl.theme.default.css'%}">
+  <style>
+      .owl-dots .owl-dot span {
+        width: 10px;
+        height: 10px;
+        margin: 5px 7px;
+        background: #D6D6D6;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity .2s ease;
+        border-radius: 30px;
+    }
+    
+    .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+        background: #0d6efd;
+    }
+    
+    .fulltable{
+        width:60% !important;
+    }
+    
+    
+    @media screen and (max-width: 500px){
+        .owl-dots{
+             text-align:center;
+         }
+         .fulltable{
+                width:auto !important;
+        }
+    }
+  </style>
+</head>
+<body class="menu-position-side menu-side-left full-screen" style="position: relative; min-height: 100%; top: 0px;">
+  <div class="all-wrapper solid-bg-all">
+  {% include '../alert/alert.html'%}
+
+    <!--------------------
+    START - Top Bar
+    -------------------->
+    <div class="top-bar color-scheme-bright">
+      <div class="logo-w menu-size">
+        <a class="logo" href="{% url 'dashboard' user.uuid %}">
+          <img src="{{site.logo}}" alt="{{site.name}}" width="150">
+          <div class="logo-label">
+            
+          </div>
+        </a>
+      </div>
+      <div class="fancy-selector-w">
+        <div class="fancy-selector-current">
+          <div class="fs-img">
+            <img alt="{{site.name}}" src="{{site.logo}}">
+          </div>
+          <div class="fs-main-info">
+            <div class="fs-name">
+             {{site.name}}
+            </div>
+            <div class="fs-sub">
+                              <span>Available Balance:</span><strong>{{user.preferred_currency}} {{user.balance}}</strong>
+            </div>
+          </div>
+         
+           <div class="fs-selector-trigger">
+             <i class="os-icon os-icon-arrow-down4"></i>
+            </div>
+        </div>
+      </div>
+      <!--------------------
+      START - Top Menu Controls
+      -------------------->
+      <div class="top-menu-controls">
+        <!--------------------
+        START - User avatar and menu in secondary top menu
+        -------------------->
+        <div class="element-search autosuggest-search-activato">
+          <input value="{{user.username | upper}}" type="text" disabled="">
+        </div>
+        <div class="logged-user-w">
+          <div class="logged-user-i">
+            <div class="avatar-w">
+              <img alt="{{site.name}}" src="{{user.photo}}">
+            </div>
+            <div class="logged-user-menu color-style-bright">
+              <div class="logged-user-avatar-info">
+                <div class="avatar-w">
+                  <img alt="{{site.name}}" src="{{user.photo}}">
+                </div>
+                <div class="logged-user-info-w">
+                  <div class="logged-user-name">
+                    {{user.username}}                 </div>
+                  <div class="logged-user-role">
+                               
+                    {{user.user.first_name}}               
+                         </div>
+                </div>
+              </div>
+              <div class="bg-icon">
+                <i class="os-icon os-icon-wallet-loaded"></i>
+              </div>
+              <ul>
+                <li>
+                  <a href="{% url 'logoutuser' %}"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                </li>
+                <li>
+                  <a href="{% url 'logoutuser' %}"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--------------------
+        END - User avatar and menu in secondary top menu
+        -------------------->
+      </div>
+      <!--------------------
+      END - Top Menu Controls
+      -------------------->
+    </div>
+    <!--------------------
+    END - Top Bar
+    -------------------->
+     <div class="layout-w"> 
+      <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+        <div class="mm-logo-buttons-w">
+          <a class="mm-logo" href="{% url 'dashboard' user.uuid %}"><img src="{{site.logo}}" width="150" style="width:100px !important;"><span></span></a>
+          <div class="mm-buttons">
+            <div class="content-panel-open">
+              <div class="os-icon os-icon-grid-circles"></div>
+            </div>
+            <div class="mobile-menu-trigger">
+              <div class="os-icon os-icon-hamburger-menu-1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-and-user">
+          <div class="logged-user-w">
+            <div class="avatar-w">
+              <img alt="{{site.name}}" src="{{user.photo}}">
+            </div>
+            <div class="logged-user-info-w">
+              <div class="logged-user-name">
+               {{user.username}}             </div>
+              <div class="logged-user-role">
+                sdf              </div>
+            </div>
+          </div>
+          <!--------------------
+          START - Mobile Menu List
+          -------------------->
+          <ul class="main-menu">
+            <li>
+              <a href="{% url 'dashboard' user.uuid %}">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-home"></div>
+                </div>
+                <span>Home</span></a>
+            </li>
+            <li class="has-sub-menu">
+              <a href="#">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-layers"></div>
+                </div>
+                <span>Account History</span></a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="{% url 'hsitory' user.uuid %}">Recent</a>
+                </li>
+                <li>
+                  <a href="{% url 'depositehis' user.uuid %}">Summary</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-sub-menu">
+              <a href="#">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-send"></div>
+                </div>
+                <span>Transfer</span></a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'intertansfer' user.uuid %}">International Transfer</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'loacltranfer' user.uuid %}">Local Transfer
+                    </a>
+                  </li>
+                </ul>
+            </li>
+
+            <li class="has-sub-menu">
+              <a href="#">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-send"></div>
+                </div>
+                <span>Loan</span></a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'loan' user.uuid %}">Loan Request</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'hsitory' user.uuid %}">View loan</a>
+                  </li>
+                </ul>
+            </li>
+            
+            <li class="has-sub-menu">
+              <a href="#">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-users"></div>
+                </div>
+                <span>Beneficiary</span>
+              </a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="{% url 'benefit' user.uuid %}">Add beneficiary</a>
+                </li>
+                <li>
+                  <a href="{% url 'benefithis' user.uuid %}">View Beneficiary</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="has-sub-menu">
+              <a href="#">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-user"></div>
+                </div>
+                <span>Profile</span></a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'profile' user.uuid %}">View Profile </a>
+                  </li>
+                  </ul>
+            </li>
+            <li>
+              <a href="{% url 'logoutuser' %}">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-signs-11"></div>
+                </div>
+                <span>Logout</span></a>
+            </li>
+          </ul>
+          <!--------------------
+          END - Mobile Menu List
+          -------------------->
+        </div>
+      </div>
+      <!--------------------
+      END - Mobile Menu
+      --------------------><!--------------------
+      START - Main Menu
+      -------------------->
+      <div class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+        <div class="logged-user-w avatar-inline">
+          <div class="logged-user-i">
+            <div class="avatar-w">
+              <img alt="{{site.name}}" src="{{user.photo}}">
+            </div>
+            <div class="logged-user-info-w">
+              <div class="logged-user-name">
+               {{user.username}}             </div>
+              <div class="logged-user-role">
+                {{user.user.first_name}}              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-actions hidden">
+          {{user.user.date_joined}}        </div>
+        
+        <ul class="main-menu has-active">
+          <li class="sub-header">
+            <span>Account</span>
+          </li>
+          <li class="selected">
+            <a href="{% url 'dashboard' user.uuid %}">
+              <div class="icon-w">
+                <div class="os-icon os-icon-home"></div>
+              </div>
+              <span>Home</span></a>
+          </li>
+          <li class="has-sub-menu">
+            <a href="#">
+              <div class="icon-w">
+                <div class="os-icon os-icon-layers"></div>
+              </div>
+              <span>Account History</span></a>
+            <div class="sub-menu-w">
+              <div class="sub-menu-header">
+                Account History
+              </div>
+              <div class="sub-menu-icon">
+                <i class="os-icon os-icon-layers"></i>
+              </div>
+              <div class="sub-menu-i">
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="{% url 'hsitory' user.uuid %}">Summary</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="sub-header">
+            <span>Fund Transfer</span>
+          </li>
+          <li class="selecte">
+              <a href="{% url 'loacltranfer' user.uuid %}">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-coins-4"></div>
+                </div>
+                <span>Local Transfer</span>
+              </a>
+            </li>
+            <li class="selecte">
+              <a href="{% url 'intertansfer' user.uuid %}">
+                <div class="icon-w">
+                  <div class="os-icon os-icon-send"></div>
+                </div>
+                <span>International Transfer</span>
+              </a>
+            </li>
+          <li class="sub-header">
+            <span>Loan</span>
+          </li>
+          <li class="has-sub-menu s">
+            <a href="#">
+              <div class="icon-w">
+                <div class="os-icon os-icon-coins-4"></div>
+              </div>
+              <span>Loan</span></a>
+            <div class="sub-menu-w">
+              <div class="sub-menu-header">
+                Loan
+              </div>
+              <div class="sub-menu-icon">
+                <i class="os-icon os-icon-coins-4"></i>
+              </div>
+              <div class="sub-menu-i">
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'loan' user.uuid %}">Request Loan</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'loanhis' user.uuid %}">View Loan</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          
+          <li class="selecte">
+            <a href="{% url 'deposit' user.uuid %}">
+              <div class="icon-w">
+                <div class="os-icon os-icon-download"></div>
+              </div>
+              <span>Deposit</span>
+            </a>
+          </li>
+          
+          
+          <li class="sub-header">
+            <span>User</span>
+          </li>
+          <li class="has-sub-menu">
+            <a href="#">
+              <div class="icon-w">
+                <div class="os-icon os-icon-users"></div>
+              </div>
+              <span>Beneficiaries</span></a>
+            <div class="sub-menu-w">
+              <div class="sub-menu-header">
+                Beneficiaries
+              </div>
+              <div class="sub-menu-icon">
+                <i class="os-icon os-icon-users"></i>
+              </div>
+              <div class="sub-menu-i">
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'benefit' user.uuid %}">Add beneficiary</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'benefithis' user.uuid %}">View Beneficiary</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="has-sub-menu">
+            <a href="#">
+              <div class="icon-w">
+                <div class="os-icon os-icon-user-check"></div>
+              </div>
+              <span>Profile</span></a>
+            <div class="sub-menu-w">
+              <div class="sub-menu-header">
+                Profile
+              </div>
+              <div class="sub-menu-icon">
+                <i class="os-icon os-icon-user-check"></i>
+              </div>
+              <div class="sub-menu-i">
+                <ul class="sub-menu">
+                  <li>
+                    <a href="{% url 'profile' user.uuid %}">View Profile </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="sub-header">
+            <span>Authentication</span>
+          </li>
+          <li class="">
+            <a href="{% url 'logoutuser' %}">
+              <div class="icon-w">
+                <div class="os-icon os-icon-log-out"></div>
+              </div>
+              <span>Logout</span></a>
+          </li>
+          <li id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style="">
+            <div id=":0.targetLanguage"> <li class="">
+            <a href="{% url 'logoutuser' %}">
+              <div class="icon-w">
+                <div class=""></div>
+              </div>
+              <span>&nbsp;</span></a>
+          </li>
+          <li class="">
+            <a href="{% url 'logoutuser'  %}">
+              <div class="icon-w">
+                <div class=""></div>
+              </div>
+              <span>&nbsp;</span></a>
+          </li>
+          <li class="">
+            <a href="{% url 'logoutuser' %}">
+              <div class="icon-w">
+                <div class=""></div>
+              </div>
+              <span>&nbsp;</span></a>
+          </li>
+        </ul>
+      </div>
+      <!--------------------
+      END - Main Menu
+      -------------------->
+    <!-- das -->
+    {% block conrent %} 
+    {% endblock conrent %} 
+
+      </div>
+      <div class="display-type"></div>
+    </div>
+    <script src="{% static 'mainz/jquery.min.js'%}"></script>
+    <script src="{% static 'mainz/popper.min.js'%}"></script>
+    <script src="{% static 'mainz/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'mainz/moment.js'%}"></script>
+    <script src="{% static 'mainz/Chart.min.js'%}"></script>
+    <script src="{% static 'mainz/select2.full.min.js'%}"></script>
+    <script src="{% static 'mainz/jquery.barrating.min.js'%}"></script>
+    <script src="{% static 'mainz/ckeditor.js'%}"></script>
+    <script src="{% static 'mainz/validator.min.js'%}"></script>
+    <script src="{% static 'mainz/daterangepicker.js'%}"></script>
+    <script src="{% static 'mainz/ion.rangeSlider.min.js'%}"></script>
+    <script src="{% static 'mainz/dropzone.js'%}"></script>
+    <script src="{% static 'mainz/mindmup-editabletable.js'%}"></script>
+    <script src="{% static 'mainz/jquery.dataTables.min.js'%}"></script>
+    <script src="{% static 'mainz/dataTables.bootstrap4.min.js'%}"></script>
+    <script src="{% static 'mainz/dataTables.bootstrap.min.js'%}"></script>
+    <script src="{% static 'mainz/fullcalendar.min.js'%}"></script>
+    <script src="{% static 'mainz/perfect-scrollbar.jquery.min.js'%}"></script>
+    <script src="{% static 'mainz/tether.min.js'%}"></script>
+
+    <script src="{% static 'mainz/slick.min.js'%}"></script>
+    <script src="{% static 'mainz/util.js'%}"></script>
+    <script src="{% static 'mainz/alert.js'%}"></script>
+    <script src="{% static 'mainz/button.js'%}"></script>
+    <script src="{% static 'mainz/carousel.js'%}"></script>
+    <script src="{% static 'mainz/collapse.js'%}"></script>
+    <script src="{% static 'mainz/dropdown.js'%}"></script>
+    <script src="{% static 'mainz/modal.js'%}"></script>
+    <script src="{% static 'mainz/tab.js'%}"></script>
+    <script src="{% static 'mainz/tooltip.js'%}"></script>
+    <script src="{% static 'mainz/popover.js'%}"></script>
+    <script src="{% static 'mainz/demo_customizer.js'%}"></script>
+    <script src="{% static 'mainz/main.js'%}"></script>
+    <script src="{% static 'mainz/slick.min(1).js'%}" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{% static 'mainz/element.js'%}"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    
+
+ 
+<style>
+  .my_footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+</style>
+
+   
+
+ 
+    
+<div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="{% static 'mainz/24px.svg" width="24" height="24" alt="{{site.name}}"></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="{% static 'mainz/saved_resource.html"></iframe></div></div></div>
+  
+  
+  
+
+</style><div class="chat-gpt-quick-query-container" style="position: relative; z-index: 2147483647;"><div class="css-18l61rl ant-app"><div><span></span><span class="ant-dropdown-trigger"></span></div></div></div></template></chatgpt-sidebar-popups></html>

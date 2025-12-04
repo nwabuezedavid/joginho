@@ -1,0 +1,523 @@
+
+{% extends './index.html' %} {% block content %}
+
+
+
+
+<div
+id="main-content"
+  class="ahOqFrhzLjivRe8a1kX_ t6gkcSf0Bt4MLItXvDJ_ uLPch_bqyJDXwe5tynMV _lTTGxW9MVI40FyDCtmr jtAJHOc7mn7b4IKRO59D zW58fVqdWJHfumftUEwF h8KYXnua2NT4kTVzieom flex w-full items-center justify-center  p-5">
+<div 
+  class="ahOqFrhzLjivRe8a1kX_ t6gkcSf0Bt4MLItXvDJ_ p-3 uLPch_bqyJDXwe5tynMV TnCneWVBJS9LByVLKjZH RZmKBZs1E1eXw8vkE6jY IerQx_TrL55Lkoy6sBIE"
+>
+  <!-- Modal content -->
+  <div
+    class="ahOqFrhzLjivRe8a1kX_ _Ybd3WwuTVljUT4vEaM3 mveJTCIb2WII7J4sY22F !w-full mngKhi_Rv06PF57lblDI _1jTZ8KXRZul60S6czNi"
+  >
+    <!-- Modal header -->
+    <div class="p-4"
+    >
+      <h3
+        class="vyo_A8gnQD1QWDPglr3h yM_AorRf2jSON3pDsdrz OyABRrnTV_kvHV7dJ0uE"
+      >
+        Create user
+      </h3>
+    </div>
+    <!-- Modal body -->
+    <div class=" w-full !w-full p-3   ">
+      <form method="post" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+        <div class="space-y-4">
+          <label class="block">
+            <span class="text-gray-700">Firstname<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="first-name"
+              id="firstname"
+              autocomplete="firstname"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+      
+          <label class="block">
+            <span class="text-gray-700">Lastname<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="last-name"
+              id="lastname"
+              autocomplete="lastname"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+      
+          <label class="block">
+            <span class="text-gray-700">Country<span class="text-red-500">*</span></span>
+            <select
+              name="country"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            >
+              <option>Select Country</option>
+              <option>Afghanistan</option>
+              <option>Aland Islands (Finland)</option>
+              <option>Albania</option>
+              <option>Algeria</option>
+              <option>American Samoa (USA)</option>
+              <option>Andorra</option>
+              <option>Angola</option>
+              <option>Anguilla (UK)</option>
+              <option>Antigua and Barbuda</option>
+              <option>Argentina</option>
+              <option>Armenia</option>
+              <option>Aruba (Netherlands)</option>
+              <option>Australia</option>
+              <option>Austria</option>
+              <option>Azerbaijan</option>
+              <option>Bahamas</option>
+              <option>Bahrain</option>
+              <option>Bangladesh</option>
+              <option>Barbados</option>
+              <option>Belarus</option>
+              <option>Belgium</option>
+              <option>Belize</option>
+              <option>Benin</option>
+              <option>Bermuda (UK)</option>
+              <option>Bhutan</option>
+              <option>Bolivia</option>
+              <option>Bosnia and Herzegovina</option>
+              <option>Botswana</option>
+              <option>Brazil</option>
+              <option>British Virgin Islands (UK)</option>
+              <option>Brunei</option>
+              <option>Bulgaria</option>
+              <option>Burkina Faso</option>
+              <option>Burma</option>
+              <option>Burundi</option>
+              <option>Cambodia</option>
+              <option>Cameroon</option>
+              <option>Canada</option>
+              <option>Cape Verde</option>
+              <option>Caribbean Netherlands (Netherlands)</option>
+              <option>Cayman Islands (UK)</option>
+              <option>Central African Republic</option>
+              <option>Chad</option>
+              <option>Chile</option>
+              <option>China</option>
+              <option>Christmas Island (Australia)</option>
+              <option>Cocos (Keeling) Islands (Australia)</option>
+              <option>Colombia</option>
+              <option>Comoros</option>
+              <option>Cook Islands (NZ)</option>
+              <option>Costa Rica</option>
+              <option>Croatia</option>
+              <option>Cuba</option>
+              <option>Curacao (Netherlands)</option>
+              <option>Cyprus</option>
+              <option>Czech Republic</option>
+              <option>Democratic Republic of the Congo</option>
+              <option>Denmark</option>
+              <option>Djibouti</option>
+              <option>Dominica</option>
+              <option>Dominican Republic</option>
+              <option>Ecuador</option>
+              <option>Egypt</option>
+              <option>El Salvador</option>
+              <option>Equatorial Guinea</option>
+              <option>Eritrea</option>
+              <option>Estonia</option>
+              <option>Ethiopia</option>
+              <option>Falkland Islands (UK)</option>
+              <option>Faroe Islands (Denmark)</option>
+              <option>Federated States of Micronesia</option>
+              <option>Fiji</option>
+              <option>Finland</option>
+              <option>France</option>
+              <option>French Guiana (France)</option>
+              <option>French Polynesia (France)</option>
+              <option>Gabon</option>
+              <option>Gambia</option>
+              <option>Georgia</option>
+              <option>Germany</option>
+              <option>Ghana</option>
+              <option>Gibraltar (UK)</option>
+              <option>Greece</option>
+              <option>Greenland (Denmark)</option>
+              <option>Grenada</option>
+              <option>Guadeloupe (France)</option>
+              <option>Guam (USA)</option>
+              <option>Guatemala</option>
+              <option>Guernsey (UK)</option>
+              <option>Guinea</option>
+              <option>Guinea-Bissau</option>
+              <option>Guyana</option>
+              <option>Haiti</option>
+              <option>Honduras</option>
+              <option>Hong Kong (China)</option>
+              <option>Hungary</option>
+              <option>Iceland</option>
+              <option>India</option>
+              <option>Indonesia</option>
+              <option>Iran</option>
+              <option>Iraq</option>
+              <option>Ireland</option>
+              <option>Isle of Man (UK)</option>
+              <option>Israel</option>
+              <option>Italy</option>
+              <option>Ivory Coast</option>
+              <option>Jamaica</option>
+              <option>Japan</option>
+              <option>Jersey (UK)</option>
+              <option>Jordan</option>
+              <option>Kazakhstan</option>
+              <option>Kenya</option>
+              <option>Kiribati</option>
+              <option>Kosovo</option>
+              <option>Kuwait</option>
+              <option>Kyrgyzstan</option>
+              <option>Laos</option>
+              <option>Latvia</option>
+              <option>Lebanon</option>
+              <option>Lesotho</option>
+              <option>Liberia</option>
+              <option>Libya</option>
+              <option>Liechtenstein</option>
+              <option>Lithuania</option>
+              <option>Luxembourg</option>
+              <option>Macau (China)</option>
+              <option>Macedonia</option>
+              <option>Madagascar</option>
+              <option>Malawi</option>
+              <option>Malaysia</option>
+              <option>Maldives</option>
+              <option>Mali</option>
+              <option>Malta</option>
+              <option>Marshall Islands</option>
+              <option>Martinique (France)</option>
+              <option>Mauritania</option>
+              <option>Mauritius</option>
+              <option>Mayotte (France)</option>
+              <option>Mexico</option>
+              <option>Moldov</option>
+              <option>Monaco</option>
+              <option>Mongolia</option>
+              <option>Montenegro</option>
+              <option>Montserrat (UK)</option>
+              <option>Morocco</option>
+              <option>Mozambique</option>
+              <option>Namibia</option>
+              <option>Nauru</option>
+              <option>Nepal</option>
+              <option>Netherlands</option>
+              <option>New Caledonia (France)</option>
+              <option>New Zealand</option>
+              <option>Nicaragua</option>
+              <option>Niger</option>
+              <option>Nigeria</option>
+              <option>Niue (NZ)</option>
+              <option>Norfolk Island (Australia)</option>
+              <option>North Korea</option>
+              <option>Northern Mariana Islands (USA)</option>
+              <option>Norway</option>
+              <option>Oman</option>
+              <option>Pakistan</option>
+              <option>Palau</option>
+              <option>Palestine</option>
+              <option>Panama</option>
+              <option>Papua New Guinea</option>
+              <option>Paraguay</option>
+              <option>Peru</option>
+              <option>Philippines</option>
+              <option>Pitcairn Islands (UK)</option>
+              <option>Poland</option>
+              <option>Portugal</option>
+              <option>Puerto Rico</option>
+              <option>Qatar</option>
+              <option>Republic of the Congo</option>
+              <option>Reunion (France)</option>
+              <option>Romania</option>
+              <option>Russia</option>
+              <option>Rwanda</option>
+              <option>Saint Barthelemy (France)</option>
+              <option>Saint Helena, Ascension and Tristan da Cunha (UK)</option>
+              <option>Saint Kitts and Nevis</option>
+              <option>Saint Lucia</option>
+              <option>Saint Martin (France)</option>
+              <option>Saint Pierre and Miquelon (France)</option>
+              <option>Saint Vincent and the Grenadines</option>
+              <option>Samoa</option>
+              <option>San Marino</option>
+              <option>Sao Tom and Principe</option>
+              <option>Saudi Arabia</option>
+              <option>Senegal</option>
+              <option>Serbia</option>
+              <option>Seychelles</option>
+              <option>Sierra Leone</option>
+              <option>Singapore</option>
+              <option>Sint Maarten (Netherlands)</option>
+              <option>Slovakia</option>
+              <option>Slovenia</option>
+              <option>Solomon Islands</option>
+              <option>Somalia</option>
+              <option>South Africa</option>
+              <option>South Korea</option>
+              <option>South Sudan</option>
+              <option>Spain</option>
+              <option>Sri Lanka</option>
+              <option>Sudan</option>
+              <option>Suriname</option>
+              <option>Svalbard and Jan Mayen (Norway)</option>
+              <option>Swaziland</option>
+              <option>Sweden</option>
+              <option>Switzerland</option>
+              <option>Syria</option>
+              <option>Taiwan</option>
+              <option>Tajikistan</option>
+              <option>Tanzania</option>
+              <option>Thailand</option>
+              <option>Timor-Leste</option>
+              <option>Togo</option>
+              <option>Tokelau (NZ)</option>
+              <option>Tonga</option>
+              <option>Trinidad and Tobago</option>
+              <option>Tunisia</option>
+              <option>Turkey</option>
+              <option>Turkmenistan</option>
+              <option>Turks and Caicos Islands (UK)</option>
+              <option>Tuvalu</option>
+              <option>Uganda</option>
+              <option>Ukraine</option>
+              <option>United Arab Emirates</option>
+              <option>United Kingdom</option>
+              <option>United States</option>
+              <option>United States Virgin Islands (USA)</option>
+              <option>Uruguay</option>
+              <option>Uzbekistan</option>
+              <option>Vanuatu</option>
+              <option>Vatican City</option>
+              <option>Venezuela</option>
+              <option>Vietnam</option>
+              <option>Wallis and Futuna (Franvce)</option>
+              <option>Western Sahara</option>
+              <option>Yemen</option>
+              <option>Zambia</option>
+              <option>Zimbabwe</option>
+            </select>
+      
+          <label class="block">
+            <span class="text-gray-700">Occupation<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="occupation"
+              id="occupation"
+              autocomplete="occupation"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">state<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="state"
+              id="state"
+              autocomplete="state"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Address<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="address"
+              id="Address"
+              autocomplete="Address"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">email<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="email"
+              id="email"
+              autocomplete="email"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">city<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="city"
+              id="city"
+              autocomplete="city"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Zipcode<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="zipcode"
+              id="Zipcode"
+              autocomplete="Zipcode"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Date of Birth<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="dob"
+              id="Date of Birth"
+              autocomplete="Date of Birth"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">password<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="password"
+              id="password"
+              autocomplete="password"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">phone<span class="text-red-500">*</span></span>
+            <input required
+              required
+              type="text"
+              name="phone"
+              id="phone"
+              autocomplete="phone"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </label>
+      
+          <!-- Additional form fields... -->
+      
+          <label class="block">
+            <span class="text-gray-700">Gender<span class="text-red-500">*</span></span>
+            <select
+              name="gender"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            ><option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Account Type<span class="text-red-500">*</span></span>
+            <select
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              name="account_type">
+              <option>Account Type</option>
+              <option>Savings</option>
+              <option>Current</option>
+              <option>Offshore</option>
+              <option>Joint</option>
+              <option>Fixed</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-gray-700">>Prefered Currency<span class="text-red-500">*</span></span>
+            <select
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              required name="prefered_cur">
+          <option value="Prefered Currency">Prefered Currency</option>
+          <option value="USD">USD</option>
+          <option value="GBP">British pound (GBP)</option>
+          <option value="EUR">EURO (EUR)</option>
+          <option value="AUD">Australian Dollar (AUD)</option>
+          <option value="CAD">Canadian Dollars (CAD)</option>
+          <option value="fr">Swiss Franc (fr)</option>
+          <option value="JPY">Japanese Yen (JPY)</option>
+          <option value="NZD">New Zealand Dollars (NZD)</option>
+          <option value="Yuan">Chinese Yuan (Yuan)</option>
+        </select>
+          <label class="block">
+            <span class="text-gray-700">status<span class="text-red-500">*</span></span>
+            <select
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              name="status">
+              <option>Marital Status</option>
+              <option>Single</option>
+              <option>Married</option>
+              <option>Divorced</option>
+            </select>
+          <label class="block">
+            <span class="text-gray-700">username<span class="text-red-500">*</span></span>
+              <input required
+              required
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              class="form-control"
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+          </label>
+      
+          <label class="block">
+            <span class="text-gray-700">Upload Photo<span class="text-red-500">*</span></span>
+            <input required
+              type="file"
+              id="usernames"
+              class="mt-1 block w-full border rounded-md text-gray-700"
+              style="visibility: visible"
+              onchange="imagechange('#usernames', '#picName', '#imgx')"
+            />
+            <input required type="hidden" id="picName" name="picName" />
+            <img src="" id="imgx" class="mt-2 w-1/2 h-32 object-cover" alt="Uploaded Image Preview">
+          </label>
+      
+          <div class="flex items-center space-x-4">
+            <button
+            class="y6GKdvUrd7vp_pxsFb57 g40_g3BQzYCOX5eZADgY YoPCmQ0E_V5W0GGmSIdm _dylIDxYTN3qgvD4U597 KmgKPWh7pHX4ztLneO0T ezMFUVl744lvw6ht0lFe mveJTCIb2WII7J4sY22F c8dCx6gnV43hTOLV6ks5 ZjWEEmDsdPvU2GdH53LK cexDVMRjens2nRrMcG96 ijrOHNoSVGATsWYKl4Id d8_fVOcgDmbt7UdpfeLK WuKugQzwTT7o1wwBck2R _ZsTMX_gz275093orLWM"
+            type="submit"
+          >
+            Save 
+          </button>
+          </div>
+        </div>
+      </form>
+      
+      <script>
+        function imagechange(eme, imput, imgxx) {
+          const filex = document.querySelector(eme);
+          const imputx = document.querySelector(imput);
+          const imgx = document.querySelector(imgxx);
+          const f = new FileReader();
+      
+          f.readAsDataURL(filex.files[0]);
+          f.addEventListener("load", () => {
+            const bytx = f.result;
+            imputx.value = bytx;
+            imgx.src = bytx;
+          });
+        }
+      </script>
+      
+    </div>
+    <!-- Modal footer -->
+    <div
+      class="Q_jg_EPdNf9eDMn1mLI2 IvHclGgvMLtYg_ow0uba pVSXSlnJdgskzP7BxPBe qUWbS_LTZujDB4XCd11V _4S0zan6DXh_qcS8KsOi _fGhMnSfYmaGrv7DvZ00"
+    >
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+{% endblock content %}

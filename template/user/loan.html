@@ -1,0 +1,98 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %} 
+
+<div class="content-w"> 
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="https://www.premiumhillscapital.com/member_dashboard/index.php">Home</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="https://www.premiumhillscapital.com/member_dashboard/loan.php#">Loan</a>
+    </li>
+    <li class="breadcrumb-item">
+        <span></span>
+    </li>
+    </ul>   
+    <div class="content-i">
+    <div class="content-box">
+        <div class="row">
+        <div class="col-lg-8">
+            <div class="element-wrapper">
+            <h6 class="element-header">Transfer</h6>
+            <div class="element-box">
+                <form enctype="multipart/form-data"  method="post">
+                    {% csrf_token %}
+                <div class="row" id="showerer">
+                    <div class="col-xs-12 col-sm-12 col-lg-12 text-center" id="answer" style="margin-top: 10px;">
+
+                                                
+                        <p style="color: green" class="text-center">
+                                                </p>
+                        
+                        <p style="color:#EF9C0C" class="text-center">
+                                                </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-lg-12" style="margin-top: 10px;">
+                        <h5 class="form-header">Request a Loan</h5>
+                        <div class="form-desc"></div>
+                        <div class="form-group m-t-30"></div>
+                        <div class="form-group">
+                        <label for="">Types of loan</label>
+                        <select name="loan_type" required class="form-control">
+                            <option>Select Loan Type</option>
+                            <option value="BUSINESS TERM LOAN">BUSINESS TERM LOAN</option>
+                            <option value="BUSINESS EQUITY &amp; INSTALLMENT LOAN">BUSINESS EQUITY &amp; INSTALLMENT LOAN</option>
+                            <option value="INVESTMENT REAL ESTATE TERM LOAN">INVESTMENT REAL ESTATE TERM LOAN</option>
+                            <option value="AUTO LOAN">AUTO LOAN</option>
+                            <option value="STUDENT LOAN">STUDENT LOAN</option>
+                            <option value="PERSONAL LOAN">PERSONAL LOAN</option>
+                        </select>
+                        </div>
+                        <fieldset class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Amount</label>
+                                <input class="form-control" placeholder="Amount" name="loan_amount" id="main_amount" type="number">
+                                <p style="
+                                    font-size: 12px !important;
+                                    color: #7e7e7e !important;
+                                ">
+                                Do not include special characters like commas
+                                (,) and full stops (.) while inputting amount.
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="">Net Income</label>
+                                <input class="form-control" placeholder="Net Income" name="income" id="income" type="number">
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <label for="">Description</label>
+                            <textarea class="form-control" rows="5" name="loan_desc" id="desc"></textarea>
+                            </div>
+                        </div>
+                        </fieldset>
+                        <div class="form-buttons-w">
+                        <button class="btn btn-primary" type="submit" name="sub_loan">
+                            Apply
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock conrent %} 

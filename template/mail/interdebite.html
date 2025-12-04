@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Information Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #edf2f7;
+            text-align: left;
+        }
+        .highlight {
+            background-color: #f7fafc;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #2d3748;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Account Information Alert [{{item.Amount}}]</h2>
+    <p>Dear {{user.username}},</p>
+    <p>Your account details are as follows:</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Account Name:</th>
+                <td>{{item.accname}}</td>
+            </tr>
+            <tr class="highlight">
+                <th>Account Number:</th>
+                <td>{{item.accnum}}</td>
+            </tr>
+            <tr>
+                <th>Bank Name:</th>
+                <td>{{item.bankname}}</td>
+            </tr>
+            <tr class="highlight">
+                <th>SWIFT Code:</th>
+                <td>{{item.swiftcode}}</td>
+            </tr>
+            <tr>
+                <th>IBAN Number:</th>
+                <td>{{item.ibannumber}}</td>
+            </tr>
+            <tr class="highlight">
+                <th>Country:</th>
+                <td>{{item.ountry}}</td>
+            </tr>
+            <tr>
+                <th>Description:</th>
+                <td>{{item.Description}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>If you have any questions or require further assistance, please do not hesitate to reach out to our support team.</p>
+    <p class="footer">Thank you for choosing our services.</p>
+    <p class="footer">Best regards,<br>{{site.name}}</p>
+</div>
+
+</body>
+</html>

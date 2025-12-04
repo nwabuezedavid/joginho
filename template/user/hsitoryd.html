@@ -1,0 +1,107 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block conrent %} 
+<div class="content-w">
+              START - Breadcrumbs
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{% url 'dashboard' user.uuid %}">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item">
+              <span>Recent</span>
+            </li>
+          </ul>
+          <div class="content-i">
+            <div class="content-box">
+              <div class="element-wrapper">
+                <h6 class="element-header">Recent</h6>
+                <div class="element-box">
+                  <h5 class="form-header">Recent Transactions</h5>
+                  <div class="form-desc">My last 10 transactions</div>
+                  <div class="table-responsive">
+                                        {% if not user.deposite.all  %}
+                        <div class="box-body">
+                            <h4 class="text-center" style="margin-top:20px">No Transactions Yet</h4>
+                            
+                        </div>
+                    {% else  %}
+                        <div class="container mx-auto p-4">
+                          <h2 class="text-2xl font-bold mb-4">Transfer History</h2>
+                        
+                          
+                        </div>
+                                
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full bg-white border border-gray-300 max-sm:text-[60%]">
+                            <thead>
+                              <tr class="bg-gray-100">
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">uuid</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">Recipient</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">Acc -Number</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">Bank Name</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">date</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">Amount</th>
+                                <th class="py-2 px-4 text-left font-semibold text-gray-600">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Sample row 1 -->
+                    {% for i in  user.localtransfer.all  %}
+
+                              <tr class="border-t border-gray-300">
+                                <td class="py-2 px-4 truncate">{{i.uuid}}</td>
+                                <td class="py-2 px-4  truncate">{{i.accname}}</td>
+                                <td class="py-2 px-4 truncate">{{i.accnum}}</td>
+                                <td class="py-2 px-4 truncate">{{i.bankname}}</td>
+                                <td class="py-2 px-4 truncate">{{i.date | timesince }}</td>
+                                <td class="py-2 px-4 truncate">{{user.preferred_currency}}{{i.Amount}}</td>
+                                
+                                <td class="py-2 px-4 max-sm:text-[60%]">
+                                  {% if i.appoved == "completed" %}
+                                  <span class="text-sm text-green-600 bg-green-100 py-1 px-3 rounded-full">Completed</span>
+                                  {% elif i.appoved == "pending" %}
+                                  <span class="text-sm text-yellow-600 bg-yellow-100 py-1 px-3 rounded-full">Pending</span>
+                                  {% elif i.appoved == "Failed" %}
+                                  <span class="text-sm text-red-600 bg-red-100 py-1 px-3 rounded-full">Failed</span>
+                                  {% endif %}
+                                </td>
+                              </tr>
+                              {% endfor %}
+                    {% for i in  user.intertransfer.all   %}
+
+                              <tr class="border-t border-gray-300">
+                                <td class="py-2 px-4 truncate">{{i.uuid}}</td>
+                                <td class="py-2 px-4  truncate">{{i.accname}}</td>
+                                <td class="py-2 px-4 truncate">{{i.accnum}}</td>
+                                <td class="py-2 px-4 truncate">{{i.bankname}}</td>
+                                <td class="py-2 px-4 truncate">{{i.date | timesince }}</td>
+                                <td class="py-2 px-4 truncate">{{user.preferred_currency}}{{i.Amount}}</td>
+                                
+                                <td class="py-2 px-4 max-sm:text-[60%]">
+                                  {% if i.appoved == "completed" %}
+                                  <span class="text-sm text-green-600 bg-green-100 py-1 px-3 rounded-full">Completed</span>
+                                  {% elif i.appoved == "pending" %}
+                                  <span class="text-sm text-yellow-600 bg-yellow-100 py-1 px-3 rounded-full">Pending</span>
+                                  {% elif i.appoved == "Failed" %}
+                                  <span class="text-sm text-red-600 bg-red-100 py-1 px-3 rounded-full">Failed</span>
+                                  {% endif %}
+                                </td>
+                              </tr>
+                              {% endfor %}
+                              <!-- Sample row 2 -->
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                    {% endif %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock conrent %} 

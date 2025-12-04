@@ -1,0 +1,45 @@
+
+
+{% extends "./base.html" %}
+
+{% load static %}
+
+
+{% block conrent %} 
+<div class="auth-box-w">
+  <div class="logo-w">
+    <a href="/"><img alt="{{site.name}}" src="{{site.logo}}" width="150" height=""></a>
+  </div>
+  <h4 class="auth-header">
+    Login Form
+  </h4>
+  <div class="woocommerce-notices-wrapper">
+                  <p style="color: red" class="text-center">
+                        </p>
+
+        <p style="color:red" class="text-center">
+                        </p>
+  </div>
+<form  method="post"  >
+  <div class="form-group">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input class="form-control" placeholder="Enter your username " name="username" id="username" type="text">
+    <div class="pre-icon os-icon os-icon-user-male-circle"></div>
+  </div>
+  <div class="form-group">
+    <label for="">Password</label>
+    <input class="form-control" placeholder="Enter your password" name="password" id="password" type="password">
+    <div class="pre-icon os-icon os-icon-fingerprint"></div>
+  </div>
+  <div class="buttons-w">
+    <button class="btn btn-primary" name="log_button">Log me in</button>
+    <div class="form-check-inline">
+      <a href="{% url 'registeruser' %}">Register Account?</a>
+    </div>
+  </div>
+</form>
+
+</div>
+
+{% endblock conrent %}
