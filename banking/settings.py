@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6mjf3!2h2hm9mbscg!m&4upjui(j*ojnev@gmas2jm-b*fboa%'
  
 # SECURITY WARNING: don't run with debug turned on in production!
-EMAIL_HOST = 'bentugaltd.com'
+EMAIL_HOST = 'firstunitytrust.com'
   
-EMAIL_HOST_USER = "support.commersb.com@bentugaltd.com" 
+EMAIL_HOST_USER = "usabank.chestburgbank@firstunitytrust.com" 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_PASSWORD = "nwabueze666$" 
 EMAIL_PORT = 465 
